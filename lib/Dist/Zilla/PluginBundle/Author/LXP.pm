@@ -1,6 +1,6 @@
 package Dist::Zilla::PluginBundle::Author::LXP;
 {
-  $Dist::Zilla::PluginBundle::Author::LXP::VERSION = '1.0.0';
+  $Dist::Zilla::PluginBundle::Author::LXP::VERSION = '1.0.1';
 }
 # ABSTRACT: configure Dist::Zilla like LXP
 
@@ -14,7 +14,6 @@ with 'Dist::Zilla::Role::PluginBundle::Easy';
 use Dist::Zilla::Plugin::CheckChangesHasContent ();
 use Dist::Zilla::Plugin::Git (); # for ::Check, ::Commit, ::Tag, ::Push
 use Dist::Zilla::Plugin::InstallGuide ();
-use Dist::Zilla::Plugin::KwaliteeTests ();
 use Dist::Zilla::Plugin::MetaProvides::Package ();
 use Dist::Zilla::Plugin::MinimumPerl ();
 use Dist::Zilla::Plugin::NoTabsTests ();
@@ -23,6 +22,7 @@ use Dist::Zilla::Plugin::PrereqsClean ();
 use Dist::Zilla::Plugin::ReadmeAnyFromPod ();
 use Dist::Zilla::Plugin::Test::Compile ();
 use Dist::Zilla::Plugin::Test::EOL ();
+use Dist::Zilla::Plugin::Test::Kwalitee ();
 use Dist::Zilla::Plugin::Test::PodSpelling ();
 use Dist::Zilla::Plugin::Test::Version ();
 use Pod::Weaver::PluginBundle::Author::LXP ();
@@ -51,7 +51,7 @@ sub configure {
         'MetaTests',
         'Test::EOL',
         'NoTabsTests',
-        'KwaliteeTests',
+        'Test::Kwalitee',
     );
 
     # PHASE: prune files
@@ -142,7 +142,7 @@ Dist::Zilla::PluginBundle::Author::LXP - configure Dist::Zilla like LXP
 
 =head1 VERSION
 
-This module is part of distribution Dist-Zilla-PluginBundle-Author-LXP v1.0.0.
+This module is part of distribution Dist-Zilla-PluginBundle-Author-LXP v1.0.1.
 
 This distribution's version numbering follows the conventions defined at L<semver.org|http://semver.org/>.
 
@@ -214,7 +214,7 @@ F<dist.ini> file:
     [NoTabsTests]
 
     ; Assess the distribution's readiness for CPAN.
-    [KwaliteeTests]
+    [Test::Kwalitee]
 
     ;; PHASE: PRUNE FILES ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 

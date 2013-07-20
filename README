@@ -3,7 +3,7 @@ NAME
 
 VERSION
     This module is part of distribution Dist-Zilla-PluginBundle-Author-LXP
-    v1.0.0.
+    v1.0.1.
 
     This distribution's version numbering follows the conventions defined at
     semver.org <http://semver.org/>.
@@ -74,7 +74,7 @@ DESCRIPTION
         [NoTabsTests]
 
         ; Assess the distribution's readiness for CPAN.
-        [KwaliteeTests]
+        [Test::Kwalitee]
 
         ;; PHASE: PRUNE FILES ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
